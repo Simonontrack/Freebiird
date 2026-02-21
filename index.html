@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreeBiird – Anonymous Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="landing-container">
+    <div class="chat-card">
+      <div class="logo">🐦</div>
+      <h1>FreeBiird</h1>
+      <p class="tagline">No login. No email. Just type.</p>
+
+      <main class="chat-container">
+        <div class="chat-log" id="chat-log">
+          <!-- chatten startar tom -->
+        </div>
+        <div class="chat-input">
+          <input type="text" id="message-input" placeholder="Type a message...">
+          <button id="send-btn">Send</button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- 1. Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <!-- 2. Firebase config -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "DIN_API_KEY",
+      authDomain: "DIN_AUTH_DOMAIN",
+      databaseURL: "https://wewg-49c62-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "DITT_PROJECT_ID",
+      storageBucket: "DITT_BUCKET",
+      messagingSenderId: "DITT_SENDER_ID",
+      appId: "DITT_APP_ID"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <!-- 3. Din JS -->
+  <script src="script.js"></script>
+</body>
+</html>
