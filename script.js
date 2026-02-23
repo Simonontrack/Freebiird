@@ -1,3 +1,10 @@
+// Skapa eller hämta anonymt användarnummer
+let userId = localStorage.getItem("freebiird_user");
+
+if (!userId) {
+  userId = Math.floor(100 + Math.random() * 900); // 100–999
+  localStorage.setItem("freebiird_user", userId);
+}
 const input = document.getElementById("message-input");
 const sendBtn = document.getElementById("send-btn");
 const chatLog = document.getElementById("chat-log");
