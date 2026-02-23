@@ -36,7 +36,7 @@ function sendMessage() {
 
   messagesRef.push({
     text: text,
-    user: userId,
+    user: userId,   // Viktigt: skickar användar-ID
     time: Date.now()
   });
 
@@ -52,6 +52,7 @@ messagesRef.limitToLast(100).on("child_added", (snapshot) => {
   const msg = document.createElement("div");
   msg.className = "message";
 
+  // Om du vill kan du färga dina egna meddelanden senare
   msg.innerHTML = `<strong>User ${data.user}:</strong> ${data.text}`;
 
   chatLog.appendChild(msg);
